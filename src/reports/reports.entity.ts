@@ -10,7 +10,7 @@ export class Report {
   approved: boolean;
 
   @Column()
-  price: string;
+  price: number;
 
   @Column()
   make: string;

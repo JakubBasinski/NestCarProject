@@ -1,13 +1,18 @@
 import {
-  IsString,
-  IsNumber,
-  Min,
-  Max,
   IsLatitude,
   IsLongitude,
+  IsNumber,
+  IsString,
+  Max,
+  Min,
 } from 'class-validator';
 
 export class CreateReportDto {
+  @IsNumber()
+  @Min(0)
+  @Max(1000000)
+  price: number;
+
   @IsString()
   make: string;
 
@@ -16,22 +21,19 @@ export class CreateReportDto {
 
   @IsNumber()
   @Min(1930)
-  @Max(2030)
+  @Max(2023)
   year: number;
 
   @IsNumber()
-  @Min(0)
-  @Max(1000000)
-  mileage: number;
-
   @IsLongitude()
-  lng: string;
+  lng: number;
 
   @IsLatitude()
-  lat: string;
-
   @IsNumber()
+  lat: number;
+
   @Min(0)
-  @Max(100000)
-  price: number;
+  @Max(1000000)
+  @IsNumber()
+  mileage: number;
 }
