@@ -1,0 +1,22 @@
+## Create a new user ##
+POST http://localhost:3000/reports
+Content-Type: application/json
+
+{
+   "make" : "ford",
+   "model" : "musztarda",
+   "year": 1989,
+   "mileage": 1630,
+   "lng":2,
+   "lat":3,
+   "price": 90300
+
+}
+
+
+### Approve an existing report
+PATCH http://localhost:3000/reports/6
+
+
+### Get estimate for a vehicle ###
+GET http://localhost:3000/reports?make=ford&model=musztarda&lng=0&lat=0&mileage=1630&year=1989

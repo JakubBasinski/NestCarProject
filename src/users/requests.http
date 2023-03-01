@@ -1,0 +1,56 @@
+## Create a new user ##
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "email": "1g2dfasdf232@1.pl",
+    "password": "123"
+}
+
+### Signin ##
+
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+   "email": "1g2dfasdf232@1.pl",
+    "password": "123"
+}
+
+
+### Storage checkout
+
+GET http://localhost:3000/auth/whoami
+
+### Storage signout
+
+POST  http://localhost:3000/auth/signout
+
+### Find a user with a given id 
+
+GET http://localhost:3000/auth/2 
+
+### Fin all users with given email 
+
+GET http://localhost:3000/auth?email=uuu@ap.pl
+
+### Delete a user with given id
+
+DELETE http://localhost:3000/auth/3
+
+### Update a user
+
+PATCH http://localhost:3000/auth/2
+Content-Type: application/json
+
+{
+    "email": "nienienie@op.ol"
+}
+
+### Set a color 
+
+GET http://localhost:3000/auth/colors/red
+
+### GEt a color 
+
+GET http://localhost:3000/auth/colors
